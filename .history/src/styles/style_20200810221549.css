@@ -292,9 +292,6 @@ svg {
 }
 
 @media (min-width: 768px) {
-	.photo figure {
-		height: 367px;
-	}
 	.photo img {
 		height: 367px;
 	}

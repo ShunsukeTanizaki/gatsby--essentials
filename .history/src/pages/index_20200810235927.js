@@ -56,7 +56,7 @@ export default ({ data }) => (
     <Img fluid={data.berry.childImageSharp.fluid} alt="赤く熟したベリー" style={{ height: "100%" }}/>
       </figure>
     </section>
-    </Layout>
+    <Layout />
   </div>
 )
 

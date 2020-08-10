@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 
 export default ({ data }) => (
   <div>
-    <Layout>
+    <Layout />
     <section className="hero">
       <figure>
     <Img fluid={data.hero.childImageSharp.fluid} alt="" style={{ height: "100%" }}/>
@@ -56,7 +56,7 @@ export default ({ data }) => (
     <Img fluid={data.berry.childImageSharp.fluid} alt="赤く熟したベリー" style={{ height: "100%" }}/>
       </figure>
     </section>
-    </Layout>
+    <Layout />
   </div>
 )
 

@@ -10,9 +10,7 @@ module.exports = {
     title: `ESSENTIALS`,
     description: `美味しい食材と食事を追求するサイト`,
     lang: `ja`,
-    siteUrl: `https://shun21-gatsby-test-site1.netlify.app/`,
-    locale: `ja_JP`,
-    fbappid: `XXXXXXXXXXXXXXXXXXXXXXXXXXXXX`,
+    siteUrl: `https://shun21-gatsby-test-site1.netlify.app/`
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -24,19 +22,6 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      potions: {
-        name: `ESSENTIALS エッセンシャルズ`,
-        short_name: `ESSENTIALS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `477294`,
-        display: `standalone`,
-        icon: `src/images/icon.png`,
-      },
-    },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`
   ],
 }

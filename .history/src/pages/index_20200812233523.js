@@ -6,8 +6,9 @@ import SEO from "../components/seo"
 
 
 export default ({ data }) => (
-  <Layout>
-    <SEO />
+  <div>
+    <Layout>
+      <SEO />
     <section className="hero">
       <figure>
     <Img fluid={data.hero.childImageSharp.fluid} alt="" style={{ height: "100%" }}/>
@@ -57,7 +58,8 @@ export default ({ data }) => (
     <Img fluid={data.berry.childImageSharp.fluid} alt="赤く熟したベリー" style={{ height: "100%" }}/>
       </figure>
     </section>
-  </Layout>
+    </Layout>
+  </div>
 )
 
 export const query = graphql`

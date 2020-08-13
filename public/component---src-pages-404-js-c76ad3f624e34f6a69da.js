@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{w2l6:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a),r=t("Bl7J"),c=t("vrFN");n.default=function(e){e.data;return l.a.createElement(r.a,null,l.a.createElement(c.a,null),l.a.createElement("h1",{style:{padding:"20vh 0",textAlign:"center"}},"お探しのページは見つかりませんでした"))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-c76ad3f624e34f6a69da.js.map

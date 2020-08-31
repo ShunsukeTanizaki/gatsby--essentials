@@ -511,7 +511,7 @@ svg {
 	max-width: 1000px;
 }
 
-.bloglist .posts { 
+.bloglist .posts {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -530,11 +530,6 @@ svg {
 	margin-bottom: 20px;
 }
 
-.posts figure {
-	max-height: 100%;
-	height: 150px;
-}
-
 .posts img {
 	height: 150px;
 	object-fit: cover;
@@ -547,10 +542,6 @@ svg {
 @media (min-width: 768px) {
 	.posts h3 {
 		font-size: 16px;
-	}
-
-	.posts figure {
-		height: 200px;
 	}
 
 	.posts img {

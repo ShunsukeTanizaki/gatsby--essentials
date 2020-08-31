@@ -8,7 +8,7 @@ import { faUtensils, faCheckSquare } from "@fortawesome/free-solid-svg-icons"
 
 import SEO from "../components/seo"
 
-export default ({ data, location }) => (
+export default ({ data }) => (
   <Layout>
     <SEO
       pagetitle="ESSENTIALS について"
@@ -64,11 +64,6 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid_withWebp
-        }
-        original {
-          src
-          height
-          width
         }
       }
     }

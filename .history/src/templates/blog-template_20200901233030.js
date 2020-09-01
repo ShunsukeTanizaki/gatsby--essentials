@@ -53,7 +53,7 @@ export default ({ data,location, pageContext }) => (
             </li>
             )}
             
-            {!pageContext.isLast && (
+            {!pageContext.islast && (
               <li className="next">
               <Link to={`/blog/${pageContext.currentPage + 1}/` }  rel="next" >
                 <span>次のページ</span>

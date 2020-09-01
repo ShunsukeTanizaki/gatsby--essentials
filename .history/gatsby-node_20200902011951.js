@@ -25,8 +25,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       edges {
         node {
           categorySlug
-          id
-          category
         }
       }
     }
@@ -71,8 +69,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `/cat/${node.categorySlug}/`,
       component: path.resolve(`./src/templates/cat-template.js`),
       context: {
-        catid: node.id,
-        catname: node.category,
         skip: 0,
         limit: 100,
         currentPage: 1, //現在のページ番号

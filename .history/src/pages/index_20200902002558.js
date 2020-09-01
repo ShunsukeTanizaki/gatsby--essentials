@@ -59,7 +59,7 @@ export default ({ data }) => (
     </section>
     <section>
       <div className="container">
-        <h2 className="sr-only">RECENT POSTS</h2>
+        <h2 className="bar">RECENT POSTS</h2>
         <div className="posts">
           {data.allContentfulBlogPost.edges.map(({ node }) => (
             <article className="post" key={node.id}>
@@ -101,7 +101,7 @@ export const query = graphql`
           id
           slug
           eyecatch {
-            fluid(maxWidth: 573) {
+            fluid(maxWidth: 500) {
               ...GatsbyContentfulFluid_withWebp
             }
             description

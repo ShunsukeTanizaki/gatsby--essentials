@@ -53,14 +53,12 @@ export default ({ data,location, pageContext }) => (
             </li>
             )}
             
-            {!pageContext.isLast && (
-              <li className="next">
-              <Link to={`/blog/${pageContext.currentPage + 1}/` }  rel="next" >
+            <li className="next">
+              <a href="base-blog.html" rel="next">
                 <span>次のページ</span>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </Link>
+              <FontAwesomeIcon icon={faChevronRight} />
+              </a>
             </li>
-            )}
           </ul>
         </div>
       </section>

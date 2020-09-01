@@ -5,12 +5,7 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronLeft, faChevronRight, } from "@fortawesome/free-solid-svg-icons"
-
-
-
-export default ({ data,location, pageContext }) => (
+export default ({ data,location }) => (
   <Layout>
     <SEO
       pagetitle="ブログ"
@@ -37,30 +32,18 @@ export default ({ data,location, pageContext }) => (
             ))}
           </div>
           <ul className="pagenation">
-            {!pageContext.isFirst && (
             <li className="prev">
-              <Link
-                to={
-                  pageContext.currentPage === 2
-                    ? `/blog/`
-                    : `/blog/${pageContext.currentPage - 1}/`
-                }
-                rel="prev"
-              >
-              <FontAwesomeIcon icon={faChevronLeft} />
+              <a href="base-blog.html" rel="prev">
+                <i className="fas fa-chevron-left" />
                 <span>前のページ</span>
-              </Link>
+              </a>
             </li>
-            )}
-            
-            {!pageContext.isLast && (
-              <li className="next">
-              <Link to={`/blog/${pageContext.currentPage + 1}/` }  rel="next" >
+            <li className="next">
+              <a href="base-blog.html" rel="next">
                 <span>次のページ</span>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </Link>
+                <i className="fas fa-chevron-right" />
+              </a>
             </li>
-            )}
           </ul>
         </div>
       </section>

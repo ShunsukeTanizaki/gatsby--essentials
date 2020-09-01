@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -57,9 +57,9 @@ export default ({ data }) => (
     <Img fluid={data.berry.childImageSharp.fluid} alt="赤く熟したベリー" style={{ height: "100%" }}/>
       </figure>
     </section>
-    <section>
+    <section className="content bloglist">
       <div className="container">
-        <h2 className="sr-only">RECENT POSTS</h2>
+        <h1 className="bar">RECENT POSTS</h1>
         <div className="posts">
           {data.allContentfulBlogPost.edges.map(({ node }) => (
             <article className="post" key={node.id}>
@@ -101,7 +101,7 @@ export const query = graphql`
           id
           slug
           eyecatch {
-            fluid(maxWidth: 573) {
+            fluid(maxWidth: 500) {
               ...GatsbyContentfulFluid_withWebp
             }
             description

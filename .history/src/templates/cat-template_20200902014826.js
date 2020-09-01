@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight, } from "@fortawesome/free-solid-svg-icons"
+import { PubSubEngine } from "graphql-subscriptions";
 
 
 
@@ -19,7 +20,7 @@ export default ({ data,location, pageContext }) => (
     />
       <section className="content bloglist">
         <div className="container">
-          <h1 className="bar">RECENT POSTS</h1>
+        <h1 className="bar">CATEGORY: {pageContext.catname}</h1>
           <div className="posts">
             {data.allContentfulBlogPost.edges.map(({ node }) => (
               <article className="post" key={node.id}>
@@ -68,11 +69,12 @@ export default ({ data,location, pageContext }) => (
 )
 
 export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query($catid: String!, $skip: Int!, $limit: Int!) {
     allContentfulBlogPost(
       sort: {fields: publishDate, order: DESC}
       skip: $skip
       limit: $limit
+      filter: { category: { elemMatch: { id : { eq: $catid } } } }
       ) {
       edges {
         node {

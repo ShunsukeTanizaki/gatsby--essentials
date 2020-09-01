@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const blogresult = await graphql(`
   query {
-    allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
+    allContentfulBlogPost(sort: {fields: publishDate, order: DESC}) {
       edges {
         node {
           id
@@ -26,19 +26,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         node {
           categorySlug
           id
-          category
         }
       }
     }
-  }
   `)
   if (blogresult.errors) {
-    reporter.panicOnBuild(`GraphQL のクエリでエラーが発生しました`)
+    reporter.panicOnBuild(`GlaphQLのクエリでエラーが発生しました`)
     return
   }
   blogresult.data.allContentfulBlogPost.edges.forEach(({ node, next, previous }) => {
     createPage({
-      path: `/blog/post/${node.slug}/`,
+      path: `/blog/post/${node.slug}`,
       component: path.resolve(`./src/templates/blogpost-template.js`),
       context: {
         id: node.id,
@@ -71,14 +69,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `/cat/${node.categorySlug}/`,
       component: path.resolve(`./src/templates/cat-template.js`),
       context: {
-        catid: node.id,
-        catname: node.category,
         skip: 0,
         limit: 100,
         currentPage: 1, //現在のページ番号
         isFirst: true, //最初のページ
         isLast: true, //最後のページ
-      },
+      }
     })
   })
 }

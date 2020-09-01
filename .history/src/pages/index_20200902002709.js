@@ -101,7 +101,7 @@ export const query = graphql`
           id
           slug
           eyecatch {
-            fluid(maxWidth: 573) {
+            fluid(maxWidth: 500) {
               ...GatsbyContentfulFluid_withWebp
             }
             description

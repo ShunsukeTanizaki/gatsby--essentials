@@ -92,8 +92,8 @@ export default ({ data, pageContext, location }) => (
         <ul className="postlink">
           {pageContext.next && (
             <li className="prev">
-              <Link to={`/blog/post/${pageContext.next.slug}/`} rel="prev">
-                <FontAwesomeIcon icon={faChevronLeft} />
+              <Link to={`/blog/post/${pageContext.next.slug}/`} rel="prev" >
+                <FontAwesomeIcon icon={faChevronLeft}/>
                 <span>{pageContext.next.title}</span>
               </Link>
             </li>
@@ -116,7 +116,7 @@ export const query = graphql`
   query($id: String!) {
     contentfulBlogPost(id: { eq: $id }) {
       title
-      publishDateJP: publishDate(formatString: "YYYY年MM月DD日")
+      publishDateJP:publishDate(formatString: "YYYY年MM月DD日")
       publishDate
       category {
         category

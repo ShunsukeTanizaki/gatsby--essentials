@@ -93,7 +93,7 @@ export default ({ data, pageContext, location }) => (
           {pageContext.next && (
             <li className="prev">
               <Link to={`/blog/post/${pageContext.next.slug}/`} rel="prev">
-                <FontAwesomeIcon icon={faChevronLeft} />
+                <FontAwesomeIcon icon={faChevronLeft}/>
                 <span>{pageContext.next.title}</span>
               </Link>
             </li>

@@ -17,6 +17,7 @@ export default props => {
     }
   }
   `)
+
   const title = props.pagetitle
     ? `${props.pagetitle} | ${data.site.siteMetadata.title}`
     : data.site.siteMetadata.title
@@ -30,7 +31,6 @@ export default props => {
   const imgurl = props.pageimg
     ? `${data.site.siteMetadata.siteUrl}${props.pageimg}`
     : props.blogimg || `${data.site.siteMetadata.siteUrl}/thumb.jpg`
-  
   const imgw = props.pageimgw || 1280
   const imgh = props.pageimgh || 640
 
@@ -39,6 +39,7 @@ export default props => {
       <html lang={data.site.siteMetadata.lang} />
       <title>{title}</title>
       <meta name="description" content={description} />
+      
       <link rel="canonical" href={url} />
 
       <meta property="og:site_name" content={data.site.siteMetadata.title} />

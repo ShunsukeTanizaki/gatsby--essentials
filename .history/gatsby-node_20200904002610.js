@@ -78,8 +78,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: 
           i === 0
-            ? `/cat/${node.categorySlug}/`
-            : `/cat/${node.categorySlug}/${i + 1}/`,
+            ? `/cat/${node.categorySlug}/ `
+            : `/cat/${node.categorySlug}/${i * 1}/`,
         component: path.resolve(`./src/templates/cat-template.js`),
         context: {
           catid: node.id,
@@ -87,7 +87,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           catslug: node.categorySlug,
           skip: catPostsPerPage * i,
           limit: catPostsPerPage,
-          currentPage: i + 1, //現在のページ番号
+          currentPage: i * 1, //現在のページ番号
           isFirst: i + 1 === 1, //最初のページ
           isLast: i + 1 === catPages, //最後のページ
         },

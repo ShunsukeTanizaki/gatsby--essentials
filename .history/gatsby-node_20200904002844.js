@@ -78,8 +78,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: 
           i === 0
-            ? `/cat/${node.categorySlug}/`
-            : `/cat/${node.categorySlug}/${i + 1}/`,
+            ? `/cat/${node.categorySlug}/ `
+            : `/cat/${node.categorySlug}/${i * 1}/`,
         component: path.resolve(`./src/templates/cat-template.js`),
         context: {
           catid: node.id,

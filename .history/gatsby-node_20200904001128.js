@@ -76,20 +76,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     Array.from({ length: catPages }).forEach((_, i) => {
       createPage({
-        path: 
-          i === 0
-            ? `/cat/${node.categorySlug}/`
-            : `/cat/${node.categorySlug}/${i + 1}/`,
+        path: `/cat/${node.categorySlug}/`,
         component: path.resolve(`./src/templates/cat-template.js`),
         context: {
           catid: node.id,
           catname: node.category,
-          catslug: node.categorySlug,
-          skip: catPostsPerPage * i,
-          limit: catPostsPerPage,
-          currentPage: i + 1, //現在のページ番号
-          isFirst: i + 1 === 1, //最初のページ
-          isLast: i + 1 === catPages, //最後のページ
+          skip: 0,
+          limit: 100,
+          currentPage: 1, //現在のページ番号
+          isFirst: true, //最初のページ
+          isLast: true, //最後のページ
         },
       })
     })

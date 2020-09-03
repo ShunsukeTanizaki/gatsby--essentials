@@ -8,6 +8,9 @@ import SEO from "../components/seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight, } from "@fortawesome/free-solid-svg-icons"
 
+
+
+
 export default ({ data,location, pageContext }) => (
   <Layout>
     <SEO
@@ -40,8 +43,8 @@ export default ({ data,location, pageContext }) => (
               <Link
                 to={
                   pageContext.currentPage === 2
-                    ? `/cat/${pageContext.catslug}/`
-                    : `/cat/${pageContext.catslug}/${pageContext.currentPage - 1}/`
+                    ? `/blog/`
+                    : `/blog/${pageContext.currentPage - 1}/`
                 }
                 rel="prev"
               >
@@ -53,7 +56,7 @@ export default ({ data,location, pageContext }) => (
             
             {!pageContext.isLast && (
               <li className="next">
-              <Link to={`/cat/${pageContext.catslug}/${pageContext.currentPage + 1}/`}  rel="next" >
+              <Link to={`/blog/${pageContext.currentPage + 1}/` }  rel="next" >
                 <span>次のページ</span>
                 <FontAwesomeIcon icon={faChevronRight} />
               </Link>

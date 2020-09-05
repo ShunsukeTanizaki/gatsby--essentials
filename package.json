@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "CONTENTFUL_SPACE_ID=5ljtjdt5vpni CONTENTFUL_ACCESS_TOKEN=TDBpYmsiFmBmZPgajyLNMFe5AUTKF38z35J3jhfN5Jg HOST=cdn.contentful.com gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
